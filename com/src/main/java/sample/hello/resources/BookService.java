@@ -14,7 +14,6 @@ public class BookService {
 	public Response getBooks(@PathParam("year") String year,
 			@MatrixParam("author") String author,
 			@MatrixParam("country") String country) {
-
 		return Response
 				.status(200)
 				.entity("getBooks is called, year : " + year
