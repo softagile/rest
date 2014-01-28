@@ -9,9 +9,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 @Path("/file")
-public class FileService {
+public class FileServiceResource {
  
-	private static final String FILE_PATH = "c:\\file.log";
+	private static final String FILE_PATH = "c:\\dev\\BahmanKalaliResume.docx";
  
 	@GET
 	@Path("/get")
@@ -22,7 +22,7 @@ public class FileService {
  
 		ResponseBuilder response = Response.ok((Object) file);
 		response.header("Content-Disposition",
-			"attachment; filename=\"file_from_server.log\"");
+			"attachment; filename=\"BahmanKalaliResume.docx\"");
 		return response.build();
  
 	}
