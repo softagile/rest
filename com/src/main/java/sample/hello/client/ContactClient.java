@@ -19,7 +19,7 @@ public class ContactClient {
 	
 	public static void main(String[] args) {
 		Client c = Client.create();
-		WebResource r = c.resource("http://localhost:8080/Jersey/rest/contacts");
+		WebResource r = c.resource("http://localhost:8080/demo/rest/contacts");
 		
 		System.out.println("===== Get huangyim =====");
 		getOneContact(r, "huangyim");
@@ -79,6 +79,7 @@ public class ContactClient {
 	public static void postForm(WebResource r, String id, String name) {
 		Form form = new Form();
 		form.add("id", id);
+		
 		form.add("name", name);
 		ClientResponse response = r.type(MediaType.APPLICATION_FORM_URLENCODED)
 								   .post(ClientResponse.class, form);
