@@ -7,8 +7,7 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class JSONServiceResourceTest {
@@ -27,6 +26,7 @@ public class JSONServiceResourceTest {
 			}
 			String output = response.getEntity(String.class);
 			assertThat(output, is(notNullValue()));
+			assertThat(output, containsString("Enter Sandman"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,7 +48,7 @@ public class JSONServiceResourceTest {
 						+ response.getStatus());
 			}
 			String output = response.getEntity(String.class);
-			assertThat(output, is(notNullValue()));
+			assertThat(output,is("Track saved : Track [title=Fade To Black, singer=Metallica]"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
