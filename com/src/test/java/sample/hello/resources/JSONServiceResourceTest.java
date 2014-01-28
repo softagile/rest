@@ -26,6 +26,7 @@ public class JSONServiceResourceTest {
 						+ response.getStatus());
 			}
 			String output = response.getEntity(String.class);
+			assertThat(output, is(notNullValue()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
