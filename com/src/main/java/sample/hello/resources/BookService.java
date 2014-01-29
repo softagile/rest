@@ -13,17 +13,18 @@ public class BookService {
 
 	@GET
 	@Path("{year}")
+	//URI Pattern : “/books/2011;country=malaysia;author=mkyong”
 	public Response getBooks(@PathParam("year") String year,
 			@MatrixParam("author") String author,
 			@MatrixParam("country") String country) {
 
-		CacheControl cacheControl = new CacheControl();
-		cacheControl.setMaxAge(86400);
-		cacheControl.setPrivate(true);
+		//CacheControl cacheControl = new CacheControl();
+		//cacheControl.setMaxAge(86400);
+		//cacheControl.setPrivate(true);
 		
 		ResponseBuilder builder = Response.status(200);
 		
-		builder.cacheControl(cacheControl);
+		//builder.cacheControl(cacheControl);
 		builder.entity("getBooks is called, year : " + year + ", author : "
 				+ author + ", country : " + country);
 		Response response = builder.build();

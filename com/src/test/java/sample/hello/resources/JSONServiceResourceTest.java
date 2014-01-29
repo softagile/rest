@@ -1,6 +1,5 @@
 package sample.hello.resources;
 
-
 import org.junit.Test;
 
 import com.sun.jersey.api.client.Client;
@@ -48,7 +47,9 @@ public class JSONServiceResourceTest {
 						+ response.getStatus());
 			}
 			String output = response.getEntity(String.class);
-			assertThat(output,is("Track saved : Track [title=Fade To Black, singer=Metallica]"));
+			assertThat(
+					output,
+					is("Track saved : Track [title=Fade To Black, singer=Metallica]"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
